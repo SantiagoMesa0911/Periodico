@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crónicas Éticas - Mi Viaje de Integridad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+      font-family: 'Roboto', sans-serif;
+      color: var(--dark-color);
+      line-height: 1.6;
+    }
+
+    .paper {
+      background-color: #fff;
+      max-width: 1140px;
+      margin: 30px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .header-section {
+      border-bottom: 2px solid var(--secondary-color);
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .subheadline {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+
+    .date-line {
+      text-align: center;
+      color: #6c757d;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .main-image {
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("codigoetica.png") center/cover no-repeat;
+      height: 450px;
+      border-radius: 8px;
+      margin: 30px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    .article {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid var(--secondary-color);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(231, 76, 60, 0.05) 100%);
+      z-index: 0;
+    }
+
+    .article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+      position: relative;
+    }
+
+    .article-title i {
+      margin-right: 10px;
+      color: var(--secondary-color);
+    }
+
+    .article-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #555;
+      position: relative;
+    }
+
+    .highlight-quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      border-left: 3px solid var(--secondary-color);
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    .mini-news-container {
+      background: var(--light-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .mini-news {
+      padding: 15px;
+      margin-bottom: 15px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .mini-news:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .mini-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+    }
+
+    .mini-title i {
+      margin-right: 8px;
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    .ethical-badge {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .headline {
+        font-size: 2.5rem;
+      }
+
+      .subheadline {
+        font-size: 1.2rem;
+      }
+
+      .main-image {
+        height: 250px;
+      }
+
+      .article {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="paper">
+    <div class="header-section">
+      <div class="headline">Crónicas Éticas</div>
+      <div class="subheadline">Mi Viaje Personal de Integridad y Valores</div>
+      <div class="date-line">Edición Especial - Junio 2025</div>
+    </div>
+
+    <div class="main-image">
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="article">
+          <div class="article-title"><i class="fas fa-graduation-cap"></i> Defendiendo la Honestidad Académica</div>
+          <div class="article-text">
+            <p>Durante mi segundo semestre en la universidad, tuve un curso el cual se
+              convirtió en un desafío inesperado. A dos días de la entrega final, un compañero de equipo llegó con una
+              "solución": un trabajo idéntico descargado de internet.</p>
+
+            <div class="highlight-quote">
+              "Nadie revisará las fuentes... ¿Por qué complicarnos si otros lo hacen?"
+            </div>
+
+            <p>La presión era tangible: calendarios ajustados, la promesa de una nota fácil, y el temor a decepcionar al
+              equipo. Pero recordé las palabras de algunos profesores de mi grdos escolares : <em>"En la universidad no
+                solo califica conocimientos, sino carácter"</em>.</p>
+
+            <p>Convocamos una reunión de emergencia. Propuse dividir el trabajo en partes manejables, con sesiones de
+              estudio nocturnas que nos permitieran abarcar todo lo necesario. Fueron 72 horas intensas, pero logramos
+              producir un análisis original.
+              El profesor notó nuestra metodología rigurosa y lo destacó como ejemplo en clase.</p>
+
+            <div class="highlight-quote">
+              "Lo que comenzó como crisis se convirtió en mi mayor lección: la ética construye confianza, incluso en uno
+              mismo"
+            </div>
+
+            <p>Hoy, como profesional, aquella decisión sigue resonando. Cada vez que enfrento atajos tentadores,
+              recuerdo que la verdadera excelencia nace de la integridad.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="article">
+          <div class="article-title"><i class="fas fa-industry"></i> Transparencia en el Turno Nocturno</div>
+          <div class="article-text">
+            <p>Durante mis tres años como monitoreador de procesos nocturnos en una de las principal empresa de bebidas
+              del país,
+              enfrenté una situación crítica que puso a prueba mi integridad profesional. Una madrugada, después de
+              semanas de turnos extenuantes, el agotamiento venció mi resistencia y me quedé dormido durante mi
+              monitoreo.
+            </p>
+
+            <p>Justo en ese momento, el sistema de carga de pedidos presentó una falla crítica que afectaba la
+              distribución nacional. Mientras yo dormía, las llamadas y mensajes del equipo se acumulaban sin respuesta,
+              escalando finalmente hasta mi jefe directo.</p>
+
+            <div class="highlight-quote">
+              "¿Debía inventar una excusa técnica o asumir mi error humano? El reloj marcaba las 3:47 AM cuando mi
+              teléfono sonó con la llamada que cambiaría mi perspectiva profesional"
+            </div>
+
+            <p>Opté por la verdad completa: confesé mi falla sin justificaciones. Para mi sorpresa, esta transparencia
+              radical generó cambios positivos inesperados. La empresa no solo comprendió la situación, sino que
+              implementó mejoras sistémicas: pausas activas obligatorias, rotación de turnos y alertas por inactividad
+              en sistemas críticos.</p>
+
+            <p>Lo que pudo terminar en una sanción disciplinaria se convirtió en un caso de estudio sobre bienestar
+              laboral y transparencia operacional. Esta experiencia me enseñó que la honestidad, incluso cuando revela
+              nuestras vulnerabilidades, construye culturas organizacionales más humanas y efectivas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-news-container">
+      <h3 class="text-center mb-4" style="color: var(--primary-color); font-family: 'Playfair Display', serif;">Pequeños
+        Actos, Grandes Impactos <span class="ethical-badge">Ética Cotidiana</span></h3>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="mini-news">
+            <div class="mini-title"><i class="fas fa-user-shield"></i> El Error Nocturno</div>
+            Cuando accidentalmente aprobé un pedido con datos incorrectos a las 2 AM, reporté inmediatamente el error
+            aunque sabía que revelaría mi momento de distracción. Mi honestidad evitó pérdidas millonarias y mejoró los
+            protocolos de verificación.
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="mini-news">
+            <div class="mini-title"><i class="fas fa-users"></i> Equipo en Crisis</div>
+            Durante una entrega crítica, descubrí que un colega había falsificado firmas en documentos. En lugar de
+            encubrirlo, lo animé a regularizar la situación. Juntos presentamos la verdad y salvamos la reputación del
+            departamento.
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="mini-news">
+            <div class="mini-title"><i class="fas fa-clipboard-check"></i> Auditoría Inesperada</div>
+            Al encontrar discrepancias en el inventario de bebidas, insistí en recalcular todo aunque significara
+            quedarme hasta tarde. Mi meticulosidad descubrió un fallo sistémico que afectaba a múltiples sucursales.
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="mini-news">
+            <div class="mini-title"><i class="fas fa-balance-scale-right"></i> Dilema de Confidencialidad</div>
+            Cuando un amigo me pidió información privilegiada sobre lanzamientos de productos, mantuve la
+            confidencialidad profesional aunque afectara nuestra amistad. Meses después, él mismo valoró mi integridad.
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <div class="row mt-4">
+    <div class="col-lg-12">
+        <div class="article">
+            <div class="article-title"><i class="fas fa-seedling"></i> Raíces y Frutos: La Ética como Legado</div>
+            <div class="article-text">
+                <p>Al revisar estas experiencias - desde las noches de turno hasta los dilemas académicos - comprendo que los principios éticos son como brújulas en la tormenta. No eliminan los desafíos, pero nos guían hacia puertos seguros. Cada decisión descrita aquí, aparentemente pequeña en su momento, terminó construyendo algo mucho mayor: <strong>una identidad profesional inquebrantable</strong>.</p>
+
+                <div class="highlight-quote">
+                    "Los valores son como cimientos: no se ven cuando todo va bien, pero son lo único que permanece cuando todo se derrumba"
+                </div>
+
+                <p>En el mundo empresarial actual, donde los atajos y resultados inmediatos suelen tentarnos, mantener firmeza ética requiere valentía cotidiana. Pero como demostraron estas historias, la <span style="color: #2c3e50; font-weight: 600;">integridad</span>:</p>
+                
+                <ul style="border-left: 3px solid #3498db; padding-left: 20px; list-style-type: none;">
+                    <li><i class="fas fa-check-circle" style="color: #27ae60;"></i> <strong>Genera confianza duradera</strong> (clientes, colegas, superiores)</li>
+                    <li><i class="fas fa-check-circle" style="color: #27ae60;"></i> <strong>Previene crisis futuras</strong> (legales, reputacionales, operativas)</li>
+                    <li><i class="fas fa-check-circle" style="color: #27ae60;"></i> <strong>Crea culturas organizacionales resilientes</strong></li>
+                    <li><i class="fas fa-check-circle" style="color: #27ae60;"></i> <strong>Nos permite mirarnos al espejo cada mañana</strong></li>
+                </ul>
+
+                <p>Mi mayor aprendizaje es que la ética profesional no se negocia en partes: o es un principio inviolable o deja de ser ética. Esa coherencia entre lo que pensamos, decimos y hacemos - especialmente cuando nadie mira - es lo que transforma empleos en vocaciones y compañías en comunidades.</p>
+
+                <div class="text-center mt-4">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; display: inline-block;">
+                        <h5 style="color: #2c3e50; font-family: 'Playfair Display', serif;"><i class="fas fa-quote-left"></i> Invitación al Lector</h5>
+                        <p style="font-style: italic;">¿Cuál será tu próximo acto de integridad profesional?<br>Cuando llegue ese momento decisivo, recuerda:<br>Los valores no son lo que profesas, sino lo que practicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="footer">
+      <p>© 2025 Crónicas Éticas - Todos los derechos reservados</p>
+      <p>Un proyecto personal sobre integridad y crecimiento ético</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
